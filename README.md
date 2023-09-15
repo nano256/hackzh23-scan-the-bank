@@ -31,8 +31,8 @@ There are three kind of sensitive data: Direct, Indirect and Potential Indirect:
   - Full Name
   - Email Address
   - Company name
-- Indirect
   - RSA private key
+- Indirect
   - Address (street, city and country)
   - Phone number
   - IBAN or any other kind of bank account number
@@ -42,7 +42,7 @@ There are three kind of sensitive data: Direct, Indirect and Potential Indirect:
   - Gender
   - Professional qualification
 
-The combination of one direct field plus any other (direct, indirect, potential indirect) is classified as sensitive data. Otherwise, it is classified as **NON**-sensitive data.
+The combination of one direct field plus any other (direct, indirect, potential indirect) is classified as sensitive data, except for RSA private keys which are always classified as sensitive. Otherwise, it is classified as **NON**-sensitive data.
 
 ### Examples
 
