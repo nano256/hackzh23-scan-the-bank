@@ -42,12 +42,12 @@ The rating consists of two parts: the performance, i.e. how well the crawler cla
 
 | Classification | Label  | Score |
 | ---            | ---    | ---   |
-| true           | true   | 10    |
-| true           | false  | -10   |
-| true           | review | -5    |
-| false          | false  | 1     |
-| false          | true   | -1    |
-| false          | review | -0.5  |
+| true           | true   | 20    |
+| true           | false  | -20   |
+| true           | review | -10   |
+| false          | false  | 2     |
+| false          | true   | -2    |
+| false          | review | -1    |
 
 The other 20% of the total score are determined by the efficiency of the solution. We will run all solutions on the same hardware and measure the time it takes for labeling all the data. The fastest solution will receive the maximum amount of points while the slowest solution will receive no points at all. The others will be graded in a linear fashion.
 
