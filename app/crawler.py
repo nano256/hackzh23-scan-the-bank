@@ -43,9 +43,9 @@ def classifier(file_path):
 
 def main():
     # Get the path of the directory where this script is in
-    script_dir_path = Path(os.path.realpath(__file__)).parents[0]
+    script_dir_path = Path(os.path.realpath(__file__)).parents[1]
     # Get the path containing the files that we want to label
-    file_dir_path = script_dir_path.parents[0] / "files"
+    file_dir_path = script_dir_path / "files"
 
     if os.path.exists(file_dir_path):
         # Initialize the label dictionary
@@ -57,7 +57,7 @@ def main():
             labels[file_name] = classifier(file_path)
 
         # Save the label dictionary as a Pickle file
-        save_dict_as_pickle(labels, script_dir_path / "crawler_labels.pkl")
+        save_dict_as_pickle(labels, script_dir_path / 'results' / 'crawler_labels.pkl')
     else:
         print("Please place the files in the corresponding repository")
 
