@@ -171,7 +171,7 @@ The rating consists of two parts: the performance, i.e. how well the crawler cla
 |----------------|---------|-------:|
 | true           | true    |     20 |
 | true           | false   |    -20 |
-| true           | review  |    -10 |
+| true           | review  |     10 |
 | false          | false   |      2 |
 | false          | true    |     -2 |
 | false          | review  |     -1 |
