@@ -78,5 +78,5 @@ Both parts of the score will be normalized and summed up to reveal the overall w
 
 ## How to Reach Out to Us
 
-- Join HackZurich Discord: [here](https://discord.com/invite/uMwgYS8qhC)
-- Send us a message in the channel: #03-juliusbär
+- Join the HackZurich Discord server [here](https://discord.com/invite/uMwgYS8qhC)
+- Send us a message in the channel `#03-juliusbär`
