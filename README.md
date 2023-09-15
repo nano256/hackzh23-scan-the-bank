@@ -20,11 +20,11 @@ The `app` directory contains the heart of your crawler. The `crawler.py` must co
 
 The `files` directory is where the files belong which the crawler has to label. We give you a few examples of files along with the corresponding labels so that you can examine their structure. You can download a ZIP file of them [here](https://drive.google.com/file/d/1KDqF4_NIhvvxdjyBgxTomzunPPWQxMDB/view?usp=sharing). Then create a `files` folder in the root directory of the repo and place the unzipped files in there. The labels can be found among the files in `labels.csv`. Don't worry about the naming of the other files, the names are randomized.
 
-## Definition of CID (Client Identifying Data)
+## Definition of sensitive data
 
 Data that allows identification of a client only when combined with other pieces of information, including Customer identifiers, career data, and Personal IDs.
 
-There are three kind of CID: Direct CID, Indirect CID and Potential Indirect CID, but what makes it CID is the combination of different fields. In this challenge we will focus on the following ones:
+There are three kind of sensitive data: Direct, Indirect and Potential Indirect, but what makes it eensitive is the combination of different fields. In this challenge we will focus on the following ones:
 
 1. Combination of at least three of following values:
 - Full Name
@@ -54,6 +54,36 @@ Examples:
 - csv extract from system with phone, address and bank client number, e.g.:
 ```
     0770001122, "Bahnhofstrasse 1, Zürich 8001", JB-0000-1111-BANK, ...
+```
+- file with RSA private key
+```
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAp78xAkQR1qqZMv7RUwDho3LstnZIiSPdxepjlzG/q7jRjYXY
+F7wA/HypQoMXnoT/tCq0yAYrLu3q2sdBtVnzsUfIytMHJsrjbbkskWmvDsL5Vg4z
+fuKZbvTZN2Li50LVa976I7gu0tGI7U18gCjjS4Pdxpx9QhdXGDxm193FNzx/KJaj
+/6uKsOupaLquKh2yr+8tNYGFNL6n4nExzlRjhfku+md78VWtqblOagh1uaPEzy8V
+Xrzyh/tDBnchfomqsv98L6JaNSXVkm2fgqVP55puMAm1j3rM/340dc3v7loCs2oz
+UiSX36hozSs0Mryv3B9CKdX8oY/Zaxg9mZZM9QIDAQABAoIBABV1yf8MdszD+//w
+ZhasmvFGa16ncL2suztN8mo+GNOO/C4TFLNqn6StjRjffQbQZIcn3INneKBTGzPc
+gH1DMgA42wkJqNVPaPuZUEiVIOpuSqg1/mQJ+M+fXuetTLKB1BxuBQnLTyA04sPb
+ISWjNXrsdpOpYwPwyPlmhtCwhEG91BtH4hRWo7d2oWb0ftzID/SakfY7QuSbqszG
+nCgfszxp6obYgrq4F/j2PLk8Bp7iBv0n+mFusB+qL15UMp+diUlnH6K355gGpNGn
+2lAKU4zvPCd5uHXoyc1zKnDSzHdITpsJKOkDIOMwsxO495DIR5pf8o1TTSK3xhKT
+ykUd5OECgYEA4k1vqYm2QdrY+JtBTCIrLRxiMImqvIq0N1RExzjllGH2Si3XGpBF
+01zn+UM/J2uqjqUYLMHbP1f4tTqKth4JvXYe8TzqcaZOMSERXZxDpKxcbv1jQp07
+capCjjS3Jsitt4NgShlt2jZCjlq1XJHz9XmL1w5+07WCdkyEYj4LghUCgYEAvcKY
+lwWYlVO1IAC4U1f4XJhte2vu7pc6975xJjB2j7BOzTwKWf+RANq++fLwykAPnJ0g
+D1bvYJGMGTBebsmByNvrwUeR0Ol1VkiILFDokBY8DDLcMJfYe674xO7c3scSdFIs
+tJ1jl/8iE4BQQxkg9TvKCY0//HUJJE0rDECJt2ECgYAzyQ6VWEsZtM/TzAtcNbF1
+qDob61TjwkXNJ355rF503xnyDZ1cmckwveDjnGzWQ4ALFmJ6032teB8UsanOVP9b
+mK0p/QuVKD5aZbvIlRqxkzOvvlI5iytwLkr+qbeDq4Z9KRYevsTxm1sNolpALbIK
+6V6DvvBs1+tb0NS2eoY9pQKBgQC308v+gW1PO8g7OHdYReBT01Y8OlM8z0RQvCzg
+0hIJIMM2DvP4O5w9N6vKd47MX0LAdXaZZZ5/7n/J5xGUQaF485NvqeWYfJEvBRTl
+2XtyGhgRuTOV34PYTaixHrTZHADErtagIdhZZs+cFLGsTque5kzS9AMIjlhM0nTh
+aaQAAQKBgQCj+zWabCXeE+GvT4NWev8IrbXne+PoNHE6s5Td0JaBBoDFtMetaX6j
+zyOOOvH+51WXCZDdtqytF2o4UA/KgPl0KuaUSNFSG6UDvVQDAsVCBNBjrupcymzE
+nVNEBUKeMqIZUEpgIdIq+SkFV1dUzTkGuSz6iuDvCP8Hx3S2ZB4Omw==
+-----END RSA PRIVATE KEY-----
 ```
 
 ## Tips
