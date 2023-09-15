@@ -18,9 +18,8 @@ The general repo structure functions as boilerplate code to give you a jump-star
 
 The `app` directory contains the heart of your crawler. The `crawler.py` must contain your crawler. If you want to split up your code feel free to put more files in there but make sure that executing `crawler.py` is starting your algorithm. Put all packages that your solution needs in the `requirements.txt` file. [Here](https://pip.pypa.io/en/stable/reference/requirements-file-format/) you can find an explanation of the syntax of pip requirements files.
 
-The `files` directory is where the files belong which the crawler has to label. We give you a few examples of files along with the corresponding labels so that you can examine their structure. You can download a ZIP file of them [here](https://drive.google.com/file/d/1KDqF4_NIhvvxdjyBgxTomzunPPWQxMDB/view?usp=sharing). Then create a `files` folder in the root directory of the repo and place the unzipped files in there. The labels can be found among the files in `labels.csv`. Don't worry about the naming of the other files, the names are randomized.
+The `files` directory is where the files belong which the crawler has to label. We give you a few examples of files along with the corresponding labels so that you can examine their structure. You can download a ZIP file of them [here](https://drive.google.com/file/d/1Od4RSU7EdwOr6O2utblhjgLFGO-KBtHi/view?usp=sharing). Then create a `files` folder in the root directory of the repo and place the unzipped files in there. The labels can be found among the files in `labels.csv`. Don't worry about the naming of the other files, the names are randomized.
 
-<<<<<<< HEAD
 ## Definition of Sensitive Data
 
 Data that allows identification of a person only when combined with other pieces of information, including Customer identifiers, career data, and Personal IDs.
