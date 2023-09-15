@@ -24,14 +24,37 @@ The `files` directory is where the files belong which the crawler has to label. 
 
 Data that allows identification of a client only when combined with other pieces of information, including Customer identifiers, career data, and Personal IDs.
 
-There are three kind of CID: Direct CID, Indirect CID and Potential Indirect CID, but what makes it CID is the combination of at least two different fields. In this challenge we will focus on the following CID:
+There are three kind of CID: Direct CID, Indirect CID and Potential Indirect CID, but what makes it CID is the combination of different fields. In this challenge we will focus on the following ones:
 
+1. Combination of at least three of following values:
 - Full Name
 - Address (street, city and country)
 - Phone number
 - Email Address
 - IBAN or any other kind of bank account number
+- Bank client number, with default format: JB-####-####-BANK
 - Company name
+2. One of following pairs:
+  - Full Name + IBAN
+  - Full Name + bank client number, with default format: JB-####-####-BANK
+3. Private RSA keys
+
+Examples:
+- cv document with name and contact information given, e.g.
+```
+     John Doe
+     +41 76 999 88 88
+     john.doe@gmail.com
+```
+- email where name and IBAN of client is mentioned, e.g.
+```
+    John Doe
+    CH0001234567890123456
+```
+- csv extract from system with phone, address and bank client number, e.g.:
+```
+    0770001122, "Bahnhofstrasse 1, Zürich 8001", JB-0000-1111-BANK, ...
+```
 
 ## Tips
 ### Analyze The Sample Data
