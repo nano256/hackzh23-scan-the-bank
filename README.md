@@ -20,17 +20,25 @@ The `files` directory is where the files belong which the crawler has to label. 
 
 ## Tips
 ### Analyze The Sample Data
+Before you start building your awesome crawler, analyze the sample data properly and ask yourself fundamental questions about the problem structure. What file types exist? How does the file content look like when you open them? Which file types should you prioritize?
 
 ### Handy Tools & Concepts
+There are many tools out there that can do a lot of the heavy lifting for you. Already the built-in regex library of Python goes a long way. Take also a look at tools like [nltk](https://www.nltk.org/) that can do things like [Named Entity Recognition (NER)](https://medium.com/mysuperai/what-is-named-entity-recognition-ner-and-how-can-i-use-it-2b68cf6f545d). You can also try out using [pretrained Machine Learning models](https://huggingface.co/learn/nlp-course/chapter4/2?fw=pt), but be careful to stay withing the Docker image size limits (see "Hand-In").
 
-### Reuse Classifiers
+### Reuse & Chain Code
+Sometimes you can restructure a specific file type so that you can use a calssifier that you built for another task. Try to modularize your code and reuse features that you already implemented. So you can build pipelines for different data types without having to reinvent the wheel. Per example for audio files you could build a speech-to-text module that feeds its output in your already existing text classifier. But beware, errors tend to compound when chaining estimators. So choose wisely whether you give something a `false` instead of a `review` as a label.
 
 ### Check If Your Solution Runs Correctly
-
-
+We check your solutions within a Docker image to ensure that your solution will also run on our hardware. We advise you to check your solution within Docker as well. [Install Docker](https://docs.docker.com/engine/install/) on your machine then go to the root directory of your local copy of this repo and run the command
+```
+docker build -t crawler .
+```
+This creates a Docker image from your `Dockerfile`. Afterwards, you can run the container by entering following command in your terminal
+```
+docker run --network none crawler
+```
 
 ## Hand-In
-
 We run the evaluation without internet connection so that no web APIs can be used for the solution. If you need a ML model or other downloadable content make sure to modify your `Dockerfile` so that it is downloaded when the image gets built. Also make sure that your Docker image is not bigger than 5GB.
 
 To hand in your solution, fork this repo and commit your solution to your fork. We will run all solutions with the evaluation dataset and afterwards we will announce the scores of the individual teams.
