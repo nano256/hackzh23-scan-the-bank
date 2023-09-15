@@ -39,6 +39,23 @@ There are three kind of CID: Direct CID, Indirect CID and Potential Indirect CID
   - Full Name + bank client number, with default format: JB-####-####-BANK
 3. Private RSA keys
 
+Examples:
+- cv document with name and contact information given, e.g.
+```
+     John Doe
+     +41 76 999 88 88
+     john.doe@gmail.com
+```
+- email where name and IBAN of client is mentioned, e.g.
+```
+    John Doe
+    CH0001234567890123456
+```
+- csv extract from system with phone, address and bank client number, e.g.:
+```
+    0770001122, "Bahnhofstrasse 1, Zürich 8001", JB-0000-1111-BANK, ...
+```
+
 ## Tips
 ### Analyze The Sample Data
 Before you start building your awesome crawler, analyze the sample data properly and ask yourself fundamental questions about the problem structure. What file types exist? How does the file content look like when you open them? Which file types should you prioritize?
