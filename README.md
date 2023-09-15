@@ -167,7 +167,7 @@ The rating consists of two parts: the performance, i.e. how well the crawler cla
 
 80% of the total score are determined by the performance. Below we show the points which will be given for each possible configuration of classification and label. 
 
-| Classification | Label   |  Score |
+| True Label | Classification   |  Score |
 |----------------|---------|-------:|
 | true           | true    |     20 |
 | true           | false   |    -20 |
