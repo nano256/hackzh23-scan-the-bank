@@ -20,18 +20,68 @@ The `app` directory contains the heart of your crawler. The `crawler.py` must co
 
 The `files` directory is where the files belong which the crawler has to label. We give you a few examples of files along with the corresponding labels so that you can examine their structure. You can download a ZIP file of them [here](https://drive.google.com/file/d/1KDqF4_NIhvvxdjyBgxTomzunPPWQxMDB/view?usp=sharing) and unzip them in your `files` folder. The labels can be found among the files in `labels.csv`. Don't worry about the naming of the other files, the names are randomized.
 
-## Definition of CID (Client Identifying Data)
+## Definition of Sensitive Data
 
-Data that allows identification of a client only when combined with other pieces of information, including Customer identifiers, career data, and Personal IDs.
+Data that allows identification of a person only when combined with other pieces of information, including Customer identifiers, career data, and Personal IDs.
 
-There are three kind of CID: Direct CID, Indirect CID and Potential Indirect CID, but what makes it CID is the combination of at least two different fields. In this challenge we will focus on the following CID:
+There are three kind of sensitive data: Direct, Indirect and Potential Indirect:
 
-- Full Name
-- Address (street, city and country)
-- Phone number
-- Email Address
-- IBAN or any other kind of bank account number
-- Company name
+- Direct
+  - Full Name
+  - Email Address
+  - Company name
+- Indirect
+  - RSA private key
+  - Address (street, city and country)
+  - Phone number
+  - IBAN or any other kind of bank account number
+- Potential Indirect
+  - Nationality
+  - Age
+  - Gender
+  - Professional qualification
+
+The combination of one direct field plus any other (direct, indirect, potential indirect) is classified as sensitive data. Otherwise, it is classified as **NON**-sensitive data.
+
+### Examples
+
+- Sensitive data: notice that in the following example only by having the full name of a person and its bank account we can already classify it as sensitive.
+```
+Customer Due Diligence (CDD) File:
+
+Client Information:
+
+    Client Name: Dr. Emma Müller
+    Client ID/Account Number: CH6372246126343118257
+    Client Type: Individual
+    Client Nationality: Swiss
+    Client Date of Birth: July 10, 1985
+    Client Occupation: Medical Doctor
+    Source of Wealth: Employment income, investment income
+
+Client Background:
+
+    Background Check: Client's background has been checked through available public records and KYC due diligence. No adverse information found.
+
+Risk Assessment:
+
+    Risk Category: Low to Moderate
+    Risk Factors:
+        Swiss nationality and residency provide lower jurisdictional risk.
+        Stable employment income and investment income.
+        No previous history of suspicious or high-risk transactions.
+        No adverse findings in background checks.
+```
+
+- Non-sensitive data: notice that in the following example, only general information about people is mentioned, but we can't point someone in particular.
+```
+List of new customers that hired our Internet service:
+
+| Phone Number   | IBAN     | Gender | Age |
+|----------------|----------|--------|-----|
+| +41 701562289  | CH123456 | Female | 27  |
+| +58 4552226986 | 45612389 | Male   | 31  |
+```
 
 ## Tips
 ### Analyze The Sample Data

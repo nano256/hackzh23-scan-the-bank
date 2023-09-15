@@ -59,7 +59,7 @@ def main():
         # Save the label dictionary as a Pickle file
         save_dict_as_pickle(labels, script_dir_path / "crawler_labels.pkl")
     else:
-        print("Please place the files in the corresponding repository")
+        print("Please place the files in the corresponding folder")
 
 
 if __name__ == "__main__":
