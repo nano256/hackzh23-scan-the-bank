@@ -75,5 +75,8 @@ The rating consists of two parts: the performance, i.e. how well the crawler cla
 The other 20% of the total score are determined by the efficiency of the solution. We will run all solutions on the same hardware and measure the time it takes for labeling all the data. The fastest solution will receive the maximum amount of points while the slowest solution will receive no points at all. The others will be graded in a linear fashion.
 
 Both parts of the score will be normalized and summed up to reveal the overall winner of the challenge.
-## How to Reach Us
 
+## How to Reach Out to Us
+
+- Join HackZurich Discord: [here](https://discord.com/invite/uMwgYS8qhC)
+- Send us a message in the channel: #03-juliusbär
