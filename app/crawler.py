@@ -1,18 +1,21 @@
 """
 This is a simple crawler that you can use as a boilerplate for your own
-implementation. The crawler checks for `.txt` files that contain the word
-"hello". Try to modify this simple implementation so that it finds
-sensitive data and then expand your crawler from there.
+implementation. The crawler labels `.txt` files that contain the word
+"hello" as "true", `.txt` files without "hello" as "false" and every other
+item as "review". Try to modify this simple implementation so that it finds
+some sensitive data and then expand your crawler from there.
 
-You change the code however you want, just make sure that following
+You can change the code however you want, just make sure that following
 things are satisfied:
 
-- Grab the file from the directory "../files" relative to this script
-- If you usePython packages, add a "requirements.txt" to your submission
-- Save your labels as a pickled dictionary in the same directory as the crawler script. Use the filename as the key
-  and the value is a string that is "true" for a file containing sensitive
-  data, "false" for files with non-sensitive data and "review" when unsure
-  about the content of the file.
+- Grab the files from the directory "../files" relative to this script
+- If you use Python packages, add a "requirements.txt" to your submission
+- If you need to download larger files, e.g. NLP models, don't add them to
+  the `app` folder. Instead, download them when the Docker image is build by
+  changing the Docker file.
+- Save your labels as a pickled dictionary in the `../results` directory.
+  Use the filename as the key and the label as the value for each file.
+- Your code cannot the internet during evaluation. Design accordingly.
 """
 
 import os
@@ -43,9 +46,9 @@ def classifier(file_path):
 
 def main():
     # Get the path of the directory where this script is in
-    script_dir_path = Path(os.path.realpath(__file__)).parents[0]
+    script_dir_path = Path(os.path.realpath(__file__)).parents[1]
     # Get the path containing the files that we want to label
-    file_dir_path = script_dir_path.parents[0] / "files"
+    file_dir_path = script_dir_path / "files"
 
     if os.path.exists(file_dir_path):
         # Initialize the label dictionary
@@ -57,7 +60,7 @@ def main():
             labels[file_name] = classifier(file_path)
 
         # Save the label dictionary as a Pickle file
-        save_dict_as_pickle(labels, script_dir_path / "crawler_labels.pkl")
+        save_dict_as_pickle(labels, script_dir_path / 'results' / 'crawler_labels.pkl')
     else:
         print("Please place the files in the corresponding folder")
 
